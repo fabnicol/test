@@ -10,6 +10,7 @@ identical(Bulletins.avan3, Bulletins.avan4)   # FALSE, thank God
 
 print(Bulletins.avan3)
 str(Bulletins.avan3)     # Variables are Matricule and Nir
+setDT(Bulletins.avan3)
 
 f(Bulletins.avan3)       # Should add a third variable labelled V
 
