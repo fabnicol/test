@@ -18,7 +18,7 @@ minimal_test <- function(jitlevel) {
     Case1 <<-  unique(B, by = NULL)
     
     f(Case1)
-    cat("g : using global assignment for Case1")  
+    cat("g : using global assignment for Case1\n")  
     print(Case1)
     
   }
@@ -30,7 +30,7 @@ minimal_test <- function(jitlevel) {
     Case2 <-  unique(B, by = NULL)
     
     f(Case2)
-    cat("h : using local assignment for Case2")  
+    cat("h : using local assignment for Case2\n")  
     print(Case2)
     
   }
