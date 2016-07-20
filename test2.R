@@ -2,7 +2,7 @@
 library(data.table)
 g <- function(Base) Base[ , Y := 1]
 
-B <- data.table(c("a", "a"))
+B <- data.table(c("a", "a"), c("b", "b"))
 
 f_global <- function() { A <<- unique(B, by = NULL) }
 
