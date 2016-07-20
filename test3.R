@@ -15,11 +15,11 @@ minimal_test <- function(jitlevel) {
   
   g <- function() {
     
-    B <<-  unique(B, by = NULL)
+    Case1 <<-  unique(B, by = NULL)
     
-    f(B)
-    cat("g : using global assignment for B")  
-    print(B)
+    f(Case1)
+    cat("g : using global assignment for Case1")  
+    print(Case1)
     
   }
   
@@ -27,11 +27,11 @@ minimal_test <- function(jitlevel) {
   
   h <-function() {
     
-    B <-  unique(B, by = NULL)
+    Case2 <-  unique(B, by = NULL)
     
-    f(B)
-    cat("h : using local assignment for B")  
-    print(B)
+    f(Case2)
+    cat("h : using local assignment for Case2")  
+    print(Case2)
     
   }
   
@@ -42,7 +42,7 @@ minimal_test <- function(jitlevel) {
   
 
 # NOTES :   
-# the issue disappears if unique() is not used (comment out line 18)  
+# the issue disappears if unique() is not used (comment out line 18 and replace Case1 by B).
 # or if a version of unique is chosen prior to commit cda73
 
 
