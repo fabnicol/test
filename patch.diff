@@ -1,0 +1,14 @@
+diff --git a/R/duplicated.R b/R/duplicated.R
+index f1c69ed..d8068ee 100644
+--- a/R/duplicated.R
++++ b/R/duplicated.R
+@@ -35,7 +35,8 @@ unique.data.table <- function(x, incomparables=FALSE, fromLast=FALSE, by=key(x),
+     if (missing(by) && !is.null(key(x))) duplicated_warning()
+     dups <- duplicated.data.table(x, incomparables, fromLast, by, ...)
+     ans <- .Call(CsubsetDT, x, which_(dups, FALSE), seq_len(ncol(x))) # more memory efficient version of which(!dups)
+-    if (nrow(x) != nrow(ans)) setindexv(ans, NULL)[] else ans #1760
++    alloc.col(if (nrow(x) != nrow(ans)) setindexv(ans, NULL)[] else ans) #1760
++
+     # i.e. x[!dups] but avoids [.data.table overhead when unique() is loop'd
+     # TO DO: allow logical to be passed through to C level, and allow cols=NULL to mean all, for further speed gain.
+     #        See news for v1.9.3 for link to benchmark use-case on datatable-help.
